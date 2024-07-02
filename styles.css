@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+  background-color: #f4f4f4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
+code,
+pre {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+code {
+  background-color: #f9f9f9;
+  padding: 0.25em 0.5em;
+  border: 1px solid #e7e7e7;
+  border-radius: 0.5em;
+}
+
+a {
+  color: #E67E22;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #D35400;
+  text-decoration: underline;
+}
+
+.site-wrapper {
+  flex-grow: 1;
+  background-color: linen;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+article {
+  flex-grow: 1;
+}
+
+.site-footer {
+  /* margin-top: auto; */
+  flex-grow: 0;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.scrollable-table {
+  overflow-x: auto;
+}
+
+.main-table {
+  width: 100%;
+  /* table-layout: fixed; */
+  border-collapse: collapse;
+  border: 1px solid #e7e7e7;
+
+  th,
+  td {
+    border: 1px solid #e7e7e7;
+    padding: 0.25em 0.5em;
+
+    &:first-child,
+    &:nth-child(2) {
+      width: 1%;
+      white-space: nowrap;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:last-child {
+      width: auto;
+    }
+  }
+
+  thead tr th {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+  }
+
+  tbody th:not(:only-child) {
+    text-align: left;
+  };
+
+  /* tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #ECF0F1;
+  } */
+}
+
+
+/* https://caniuse.com/css-nesting */

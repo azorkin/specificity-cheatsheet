@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors and Specificity Cheatsheet | Codecademy project</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Nunito:wght@400;700&family=Ubuntu+Mono:wght@400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="site-wrapper">
+    <article class="container">
+      <h1>CSS Selectors and Specificity Cheatsheet</h1>
+      <p class="lead"><strong>Specificity</strong> is the algorithm used by browsers to determine the CSS declaration
+        that is the most relevant to an element, which in turn, determines the property value to apply to the element.
+        The specificity algorithm calculates the weight of a CSS selector to determine which rule from competing CSS
+        declarations gets applied to an element.
+
+      </p>
+      <div class="scrollable-table">
+        <table class="main-table">
+          <thead>
+            <tr>
+              <th scope="col">Weight Category</th>
+              <th scope="col">Weight Value</th>
+              <th scope="col">Selectors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>ID Column</th>
+              <td>1-0-0</td>
+              <td>Includes only ID selectors, such as <code>#id-selector</code></td>
+            </tr>
+            <tr>
+              <th rowspan="3">CLASS column</th>
+              <td rowspan="3">0-1-0</td>
+              <td><strong>class selectors</strong>, such as <code>.myClass</code></td>
+            </tr>
+            <tr>
+              <td><strong>attribute selectors</strong> like <code>[type="radio"]</code> and <code>[lang|="fr"]</code></td>
+            </tr>
+            <tr>
+              <td><strong>pseudo-classes</strong>, such as <code>:hover</code>, <code>:nth-of-type(3n)</code>, and <code>:required</code></td>
+            </tr>
+            <tr>
+              <th>TYPE column</th>
+              <td>0-0-1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>No value</th>
+              <td>0-0-0</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th colspan="3">Exceptions</th>
+            </tr>
+            <tr>
+              <th>Inline style</th>
+              <td>1-0-0-0</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><code>!important</code></th>
+              <td>∞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><code>:where()</code> exception</th>
+              <td>&mdash;</td>
+              <td></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <h3>How <code>@scope</code> blocks affect specificity</h3>
+      <p>Including a ruleset inside a @scope block does not affect the specificity of its selector, regardless of the selectors used inside the scope root and limit.</p>
+      <p>However, if you decide to explicitly prepend the :scope pseudo-class to your scoped selectors, you'll need to factor it in when calculating their specificity. :scope, like all regular pseudo-classes, has a specificity of 0-1-0. </p>
+
+    </article>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/@layer -->
+    <footer class="site-footer">
+      bye-bye from <a href="https://www.codecademy.com/profiles/dymz">dymz</a>.
+    </footer>
+  </main>
+</body>
+
+</html>
